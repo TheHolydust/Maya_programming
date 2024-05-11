@@ -67,6 +67,9 @@ class Rocket(object):
 
                 self.fuelCone = copyCone
 
+        
+        #create cylinders
+        
         if self.bodyParts == 1:
             self.crateCyl()
         
@@ -83,16 +86,12 @@ class Rocket(object):
                 self.bodyCyl = copyCyl
 
         
+        #create top cone
         cylBB = cmds.xform (self.bodyCyl, q = 1, boundingBox =1, ws=1)
         
-
         self.moveCone(name = "noseCone")
         
         cmds.xform(self.fuelCone, r=1, t = [0, cylBB[4], 0])
-
-
-        cmds.ls(type = )
-
 
                 
                 
