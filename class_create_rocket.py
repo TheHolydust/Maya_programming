@@ -96,5 +96,5 @@ class Rocket(object):
 
                 
                 
-cone1 = Rocket()
-cone1.generateModel()
+rocket1 = Rocket()
+rocket1.generateModel()
