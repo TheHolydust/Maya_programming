@@ -57,14 +57,15 @@ class Rocket(object):
             # if self.fuelTanks >1
             self.moveCone(name = "fuelCone")
 
-            #newrad - is new radius of cone an edit cone radius
+            # newrad - is new radius of cone an edit cone radius
             newrad = 2*3.14*self.radius/self.fuelTanks/2.4
             
             cmds.polyCone(self.fuelCone, e = 1, r = newrad)
 
+            # calculate rot angles
             coneRot = 360/self.fuelTanks
             
-            #move cone to cyl radius and change pivot point
+            # move cone to cyl radius and change pivot point
             cmds.xform(self.fuelCone, r=1, t = [self.radius, 0, 0])
             cmds.xform(self.fuelCone, ws=1, a=1, rp = [0,0,0], sp = [0,0,0])
 
@@ -77,7 +78,7 @@ class Rocket(object):
                 self.fuelCone = copyCone
 
         
-        #create cylinders
+        # create cylinders
         if self.bodyParts == 1:
             self.crateCyl()
         
@@ -94,7 +95,7 @@ class Rocket(object):
                 self.bodyCyl = copyCyl
 
         
-        #create top cone
+        # create top cone
         cylBB = cmds.xform (self.bodyCyl, q = 1, boundingBox =1, ws=1)
         self.moveCone(name = "noseCone")
         cmds.xform(self.fuelCone, r=1, t = [0, cylBB[4], 0])
