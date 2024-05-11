@@ -96,5 +96,5 @@ class Rocket(object):
 
                 
                 
-cone1 = Rocket(bodyParts = 2, fuelTanks = 10, radius = 2)
+cone1 = Rocket()
 cone1.generateModel()
