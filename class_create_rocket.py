@@ -42,7 +42,12 @@ class Rocket(object):
        
     def generateModel(self):
                 
-        # [x_min, y_min, z_min, x_max, y_max, z_max]
+        """ 
+        This function ceate objects in viewport
+
+        information:
+        [x_min, y_min, z_min, x_max, y_max, z_max]
+        """
         
         if self.fuelTanks == 1: 
             
@@ -73,7 +78,6 @@ class Rocket(object):
 
         
         #create cylinders
-        
         if self.bodyParts == 1:
             self.crateCyl()
         
@@ -91,7 +95,6 @@ class Rocket(object):
 
         
         #create top cone
-        
         cylBB = cmds.xform (self.bodyCyl, q = 1, boundingBox =1, ws=1)
         self.moveCone(name = "noseCone")
         cmds.xform(self.fuelCone, r=1, t = [0, cylBB[4], 0])
